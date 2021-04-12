@@ -38,7 +38,7 @@ struct Question {
                 answers: [
                     Answer(title: "Ненавижу", type: .cat),
                     Answer(title: "Нервничаю", type: .rabbit),
-                    Answer(title: "Не замечаню", type: .turtle),
+                    Answer(title: "Не замечаю", type: .turtle),
                     Answer(title: "Обожаю", type: .dog)
                 ]
             )

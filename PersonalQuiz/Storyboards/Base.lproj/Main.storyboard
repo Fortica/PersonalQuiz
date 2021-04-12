@@ -92,6 +92,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OXc-G6-8kv">
+                                <rect key="frame" x="16" y="103" width="288" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Rsh-ig-Mtq">
+                                <rect key="frame" x="0.0" y="91" width="320" height="4"/>
+                            </progressView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="MgV-jc-N7Y">
                                 <rect key="frame" x="16" y="244" width="288" height="80.5"/>
                                 <subviews>
@@ -117,7 +126,7 @@
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ldi-QB-hkq" userLabel="Ответить">
                                         <rect key="frame" x="0.0" y="50.5" width="288" height="30"/>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="Ответить"/>
                                         <connections>
                                             <action selector="rangedAnswerButtonPressed" destination="TxM-wN-mYu" eventType="touchUpInside" id="ebQ-nz-tKY"/>
                                         </connections>
@@ -220,20 +229,11 @@
                                         <rect key="frame" x="121" y="138" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
-                                            <action selector="singleButtonAnswerPressed:" destination="TxM-wN-mYu" eventType="touchUpInside" id="lSu-1k-2VE"/>
+                                            <action selector="singleButtonAnswerPressed:" destination="TxM-wN-mYu" eventType="touchUpInside" id="t8C-no-KTw"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Rsh-ig-Mtq">
-                                <rect key="frame" x="0.0" y="91" width="320" height="4"/>
-                            </progressView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OXc-G6-8kv">
-                                <rect key="frame" x="16" y="103" width="288" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="elt-ov-Kol"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -264,13 +264,7 @@
                             <constraint firstItem="elt-ov-Kol" firstAttribute="trailing" secondItem="2fc-mr-w2f" secondAttribute="trailing" constant="16" id="nzr-2f-32J"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Вопрос №" id="67z-0L-904">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="RLe-aY-Qcx">
-                            <connections>
-                                <segue destination="kFM-9P-sWw" kind="show" id="pGg-yh-Ug4"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Вопрос №" id="67z-0L-904"/>
                     <connections>
                         <outlet property="multipleStackView" destination="rVB-1G-Top" id="co7-zD-iDC"/>
                         <outlet property="questionLabel" destination="OXc-G6-8kv" id="cXC-Hj-Jkh"/>
@@ -366,9 +360,6 @@
             <point key="canvasLocation" x="712.5" y="92.957746478873247"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="7PS-gs-Vr3"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
