@@ -46,7 +46,7 @@ class QuestionsViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let resultVC = segue.destination as! ResultsViewController
-        resultVC.resultFinishedAnswers = answerChoosen
+        resultVC.answer = answerChoosen
     }
     
     

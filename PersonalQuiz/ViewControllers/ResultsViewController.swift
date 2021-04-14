@@ -12,41 +12,35 @@ class ResultsViewController: UIViewController {
     @IBOutlet var resultLabel: UILabel!
     @IBOutlet var discriptionLabel: UILabel!
     
-    @IBOutlet var navigationBarLabel: UINavigationItem!
     
-    
-    var resultFinishedAnswers: [Answer]!
+    var answer: [Answer]!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        returnUnicleAnimal(answer: resultFinishedAnswers)
+        updateResult()
         
-        navigationBarLabel.hidesBackButton = true
+        navigationItem.hidesBackButton = true
         
     }
-    
-    private func returnUnicleAnimal(answer: [Answer]) {
+}
+// MARK: - Private Methods
+extension ResultsViewController {
+    private func updateResult() {
+        
         var arrayAnimal: [AnimalType] = []
-        for index in answer {
-            let animal = index.type
-            arrayAnimal.append(animal)
-            }
-        let duplicates = Array(Set(arrayAnimal.filter({ (i: AnimalType) in arrayAnimal.filter({ $0 == i }).count > 1})))
+        arrayAnimal = answer.map{ $0.type }
 
-        if duplicates.contains(.dog) {
-            resultLabel.text = "Вы - \(String(AnimalType.dog.rawValue))"
-            discriptionLabel.text = AnimalType.dog.definition
-        } else if duplicates.contains(.cat) {
-            resultLabel.text = "Вы - \(String(AnimalType.cat.rawValue))"
-            discriptionLabel.text = AnimalType.cat.definition
-        } else if duplicates.contains(.rabbit) {
-            resultLabel.text = "Вы - \(String(AnimalType.rabbit.rawValue))"
-            discriptionLabel.text = AnimalType.rabbit.definition
-        } else if duplicates.contains(.turtle) {
-            resultLabel.text = "Вы - \(String(AnimalType.turtle.rawValue))"
-            discriptionLabel.text = AnimalType.turtle.definition
+        let unicleElement = Array(Set(arrayAnimal.filter({ (i: AnimalType) in arrayAnimal.filter({ $0 == i }).count > 1})))
+        
+        upditeUI(with: unicleElement)
+        
+    }
+    private func upditeUI(with animal: [AnimalType]) {
+
+        for elementAnimal in animal {
+            resultLabel.text = "Вы - \(String(elementAnimal.rawValue))"
+            discriptionLabel.text = elementAnimal.definition
         }
     }
-    
 }

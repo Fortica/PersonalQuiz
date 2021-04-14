@@ -337,7 +337,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="discriptionLabel" destination="qwd-ku-GO8" id="H46-yW-vdI"/>
-                        <outlet property="navigationBarLabel" destination="4dn-vD-L5u" id="AUq-Hz-2QF"/>
                         <outlet property="resultLabel" destination="otJ-Ec-vrc" id="GW9-ro-90n"/>
                     </connections>
                 </viewController>
